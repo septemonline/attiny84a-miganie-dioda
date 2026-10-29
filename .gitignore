@@ -1,0 +1,14 @@
+# Pliki kompilacji
+build/
+*.o
+*.elf
+*.hex
+*.map
+*.lss
+
+# Microchip Studio / Atmel Studio
+Debug/
+Release/
+.vs/
+*.atsuo
+*.componentinfo.xml

@@ -1,0 +1,23 @@
+name: Kompilacja
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  avr-gcc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalacja avr-gcc
+        run: sudo apt-get update && sudo apt-get install -y gcc-avr avr-libc binutils-avr
+
+      - name: Kompilacja
+        run: make CFLAGS="-mmcu=attiny84 -Os -std=gnu99 -Wall -Wextra -Werror"
+
+      - name: Plik .hex
+        uses: actions/upload-artifact@v4
+        with:
+          name: miganie-hex
+          path: build/miganie.hex
