@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 440" width="900" height="440" font-family="Arial, Helvetica, sans-serif">
+  <title>Schemat: ATtiny84A-PU zasilany 5 V z programatora USBasp, dioda LED z rezystorem 150 Ω na pinie PB1</title>
+  <rect width="900" height="440" fill="#ffffff"/>
+
+  <!-- X1: złącze programatora USBasp -->
+  <rect x="34" y="70" width="136" height="326" rx="8" fill="#f5f7fb" stroke="#8a93a6" stroke-width="2" stroke-dasharray="8 6"/>
+
+  <g stroke="#1f2430" stroke-width="3" fill="none" stroke-linecap="square">
+    <!-- szyna zasilania VCC -->
+    <path d="M156 110 H330"/>
+    <!-- szyna masy GND -->
+    <path d="M156 370 H720"/>
+    <path d="M330 290 H290 V370"/>
+    <!-- C1 między VCC a GND -->
+    <path d="M240 110 V219"/>
+    <path d="M240 233 V370"/>
+    <line x1="216" y1="219" x2="264" y2="219"/>
+    <line x1="216" y1="233" x2="264" y2="233"/>
+
+    <!-- U1: ATtiny84A -->
+    <rect x="330" y="70" width="200" height="260" fill="#ffffff"/>
+
+    <!-- PB1 → R1 → D1 -->
+    <path d="M530 200 H580"/>
+    <path d="M660 200 H720 V230"/>
+    <rect x="580" y="186" width="80" height="28" fill="#ffffff"/>
+    <path d="M696 230 H744 L720 274 Z" fill="#ffffff" stroke-linejoin="round"/>
+    <line x1="694" y1="274" x2="746" y2="274"/>
+    <path d="M720 274 V370"/>
+  </g>
+
+  <!-- zaciski złącza X1 -->
+  <g fill="#ffffff" stroke="#1f2430" stroke-width="3">
+    <circle cx="150" cy="110" r="6"/>
+    <circle cx="150" cy="370" r="6"/>
+  </g>
+
+  <!-- węzły -->
+  <g fill="#1f2430">
+    <circle cx="240" cy="110" r="5"/>
+    <circle cx="240" cy="370" r="5"/>
+    <circle cx="290" cy="370" r="5"/>
+  </g>
+
+  <!-- światło diody -->
+  <g stroke="#e6293b" stroke-width="2.5" fill="#e6293b" stroke-linecap="round">
+    <line x1="750" y1="242" x2="772" y2="224"/>
+    <path d="M776 220 L764 222 L771 231 Z" stroke-linejoin="round"/>
+    <line x1="756" y1="258" x2="778" y2="240"/>
+    <path d="M782 236 L770 238 L777 247 Z" stroke-linejoin="round"/>
+  </g>
+
+  <!-- kierunek prądu -->
+  <g fill="#005fdb" stroke="#005fdb" stroke-width="2.5">
+    <line x1="600" y1="168" x2="632" y2="168"/>
+    <path d="M640 168 L629 162 L629 174 Z" stroke-linejoin="round"/>
+  </g>
+  <text x="620" y="156" text-anchor="middle" font-size="15" fill="#005fdb">I ≈ 20 mA</text>
+
+  <g fill="#1f2430" font-size="17">
+    <!-- X1 -->
+    <text x="134" y="104" text-anchor="end" font-size="15" font-weight="bold">VCC</text>
+    <text x="134" y="126" text-anchor="end" font-size="13" fill="#595959">pin 2</text>
+    <text x="134" y="364" text-anchor="end" font-size="15" font-weight="bold">GND</text>
+    <text x="134" y="386" text-anchor="end" font-size="13" fill="#595959">pin 10</text>
+    <text x="102" y="208" text-anchor="middle" font-weight="bold">X1</text>
+    <text x="102" y="230" text-anchor="middle" font-size="16">USBasp</text>
+    <text x="102" y="250" text-anchor="middle" font-size="13" fill="#595959">złącze ISP</text>
+    <text x="188" y="100" font-size="15" fill="#e6293b" font-weight="bold">+5 V</text>
+
+    <!-- C1 -->
+    <text x="252" y="206" font-weight="bold" font-size="16">C1</text>
+    <text x="252" y="256" font-size="14">100 nF</text>
+
+    <!-- U1 -->
+    <text x="430" y="146" text-anchor="middle" font-weight="bold">U1</text>
+    <text x="430" y="168" text-anchor="middle" font-size="16">ATtiny84A-PU</text>
+    <text x="342" y="116" font-size="15">VCC</text>
+    <text x="342" y="296" font-size="15">GND</text>
+    <text x="518" y="206" text-anchor="end" font-size="15">PB1</text>
+    <text x="318" y="102" text-anchor="end" font-size="14" fill="#595959">1</text>
+    <text x="318" y="282" text-anchor="end" font-size="14" fill="#595959">14</text>
+    <text x="542" y="192" font-size="14" fill="#595959">3</text>
+
+    <!-- R1 -->
+    <text x="620" y="240" text-anchor="middle" font-weight="bold">R1</text>
+    <text x="620" y="260" text-anchor="middle" font-size="15">150 Ω</text>
+
+    <!-- D1 -->
+    <text x="792" y="250" font-weight="bold">D1</text>
+    <text x="792" y="270" font-size="15">LED czerwona</text>
+    <text x="792" y="288" font-size="15">≈ 2 V</text>
+    <text x="688" y="240" text-anchor="end" font-size="13" fill="#595959">A</text>
+    <text x="688" y="286" text-anchor="end" font-size="13" fill="#595959">K</text>
+  </g>
+
+  <text x="450" y="428" text-anchor="middle" font-size="13" fill="#8a8a8a">Symbole wg PN-EN 60617 (IEC 60617) · numery pinów dla obudowy PDIP-14 · linie RST, MOSI, MISO i SCK programatora – wg tabeli połączeń</text>
+</svg>

@@ -21,6 +21,8 @@ Pierwszy program na mikrokontroler AVR: dioda LED na pinie **PB1** zapala się i
 
 ## Połączenia
 
+![Schemat: ATtiny84A-PU zasilany 5 V z USBasp, dioda LED z rezystorem 150 Ω na pinie PB1](docs/schemat.svg)
+
 **Dioda:** pin 3 (PB1) → rezystor 150 Ω → anoda diody, katoda → GND.
 
 | Pin ATtiny84A | Funkcja |
@@ -40,7 +42,9 @@ Pierwszy program na mikrokontroler AVR: dioda LED na pinie **PB1** zapala się i
 | 9 – MISO | 8 – PA5 (MISO) |
 | 7 – SCK | 9 – PA4 (SCK) |
 
-Piny liczymy od wcięcia na obudowie, przeciwnie do ruchu wskazówek zegara. Podczas programowania układ zasila USBasp. Nie podłączaj w tym czasie innego zasilania.
+Piny liczymy od wcięcia na obudowie, przeciwnie do ruchu wskazówek zegara.
+
+**Zasilanie:** cały układ zasila USBasp – 5 V z portu USB komputera, zarówno podczas programowania, jak i później, gdy program już działa. Jeśli programator ma zworkę wyboru napięcia, ustaw ją na 5 V. Nie podłączaj w tym czasie żadnego innego źródła zasilania.
 
 ## Kompilacja i wgranie
 
@@ -68,6 +72,7 @@ Gotowy plik `.hex` z każdej zmiany w repozytorium możesz też pobrać z zakła
 
 ```
 src/main.c                        program
+docs/schemat.svg                  schemat połączeń
 Makefile                          kompilacja i wgrywanie (avr-gcc + avrdude)
 .github/workflows/kompilacja.yml  automatyczna kompilacja na GitHubie
 ```
